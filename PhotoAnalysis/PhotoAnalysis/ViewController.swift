@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreML
+import Vision
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -46,5 +48,31 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let image = images[indexPath.row]
         cell.configureCell(image)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell else { return }
+        makePredictionFor(cell.imageView.image!)
+    }
+    
+    private func makePredictionFor(_ image: UIImage) {
+        guard let model = try? VNCoreMLModel(for: MobileNet().model) else { return }
+        let request = VNCoreMLRequest(model: model,
+                                      completionHandler: handleResults)
+        let handler = VNImageRequestHandler(cgImage: image.cgImage!, options: [:])
+        do {
+            try handler.perform([request])
+        } catch {
+            debugPrint("ERROR: ", error)
+        }
+    }
+    
+    private func handleResults(request: VNRequest, error: Error?) {
+        guard let results = request.results as? [VNClassificationObservation] else { return }
+        let bestResult = results[0]
+        let id = bestResult.identifier.capitalized
+        let confidence = bestResult.confidence * 100
+        let confidenceString = String(format: "%.2f", confidence)
+        classificationLabel.text = "\(id): \(confidenceString)%"
     }
 }

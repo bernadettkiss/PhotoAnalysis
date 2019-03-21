@@ -14,6 +14,7 @@
 		CF54C120224014D6002D9904 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF54C11E224014D6002D9904 /* LaunchScreen.storyboard */; };
 		CF54C12822402537002D9904 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54C12722402537002D9904 /* ImageCollectionViewCell.swift */; };
 		CF54C12A2243181C002D9904 /* GridFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54C1292243181C002D9904 /* GridFlowLayout.swift */; };
+		CF54C12C224404EE002D9904 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CF54C12B224404EE002D9904 /* MobileNet.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		CF54C121224014D6002D9904 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF54C12722402537002D9904 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		CF54C1292243181C002D9904 /* GridFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridFlowLayout.swift; sourceTree = "<group>"; };
+		CF54C12B224404EE002D9904 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				CF54C117224014D4002D9904 /* ViewController.swift */,
 				CF54C12722402537002D9904 /* ImageCollectionViewCell.swift */,
 				CF54C1292243181C002D9904 /* GridFlowLayout.swift */,
+				CF54C12B224404EE002D9904 /* MobileNet.mlmodel */,
 				CF54C119224014D4002D9904 /* Main.storyboard */,
 				CF54C11C224014D6002D9904 /* Assets.xcassets */,
 				CF54C11E224014D6002D9904 /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF54C12822402537002D9904 /* ImageCollectionViewCell.swift in Sources */,
+				CF54C12C224404EE002D9904 /* MobileNet.mlmodel in Sources */,
 				CF54C118224014D4002D9904 /* ViewController.swift in Sources */,
 				CF54C116224014D4002D9904 /* AppDelegate.swift in Sources */,
 				CF54C12A2243181C002D9904 /* GridFlowLayout.swift in Sources */,
